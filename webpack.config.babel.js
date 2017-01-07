@@ -5,7 +5,7 @@ import autoprefixer from 'autoprefixer'
 
 export default {
   entry: {
-    main: './src/',
+    wz: './src/',
   },
   output: {
     path: './dist/',
@@ -18,8 +18,8 @@ export default {
       exclude: /node_modules/,
       loader: 'babel',
     }, {
-      test: /\.woff$/,
-      loader: 'url?limit=5000',
+      test: /\.woff2?$/,
+      loader: 'url-loader?limit=65000',
     }, {
       test: /\.s?css$/,
       loader: ExtractTextPlugin.extract(['css', 'postcss', 'sass']),

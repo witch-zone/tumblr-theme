@@ -1,0 +1,14 @@
+main {
+  position: relative;
+}
+
+section {
+  padding: $base-section-padding 0;
+}
+
+.wrapper {
+  width: 94%;
+  margin: 0 auto;
+  padding: 0 $base-spacing;
+  max-width: $max-width;
+}
