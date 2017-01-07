@@ -1,0 +1,19 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+  },
+  "extends": [
+    "airbnb"
+  ],
+  "rules": {
+    "semi": ["error", "never"],
+    "no-confusing-arrow": "off",
+    "import/named": "error",
+    "import/default": "error",
+    "import/prefer-default-export": "off",
+  },
+  "settings": {
+    "import/resolver": webpack
+  }
+}
