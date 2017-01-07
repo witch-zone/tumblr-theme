@@ -21,7 +21,7 @@ export default {
       loader: 'babel',
     }, {
       test: /\.html?$/,
-      loader: 'html-loader?minimize=true',
+      loader: 'html-loader?minimize=true&removeAttributeQuotes=false',
     }, {
       test: /\.woff2?$/,
       loader: 'url-loader?limit=65000',

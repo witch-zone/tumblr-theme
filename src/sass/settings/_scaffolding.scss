@@ -2,9 +2,10 @@ $mq-tablet: "screen and (min-width: 600px)" !default;
 $mq-desktop: "screen and (min-width: 1000px)" !default;
 
 $base-spacing: 1rem !default;
-$max-width: 750px !default;
+$max-width-wide: 80% !default;
+$max-width-thin: 65% !default;
 
-$sidebar-width: 32%;
+$sidebar-width: 25%;
 $sidebar-max-width: 15em;
 
 $base-section-padding: 2rem !default;

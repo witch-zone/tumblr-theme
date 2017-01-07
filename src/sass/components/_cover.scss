@@ -1,0 +1,14 @@
+.✨cover {
+  &🍬logo {
+    margin: 0 auto $base-spacing;
+    max-width: $sidebar-max-width;
+
+    a {
+      border: none;
+    }
+    
+    figcaption {
+      display: none;
+    }
+  }
+}

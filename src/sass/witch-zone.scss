@@ -3,7 +3,11 @@
 @import "settings/scaffolding";
 @import "settings/typography";
 @import "settings/witching-palette";
+
 @import "base/body";
 @import "base/fonts";
 @import "base/typography";
 @import "base/scaffolding";
+@import "base/links";
+
+@import "components/cover";

@@ -10,20 +10,30 @@ section {
   width: 94%;
   margin: 0 auto;
   padding: $base-section-padding $base-spacing;
-  max-width: $max-width;
 
-  display: flex;
-  flex-direction: row;
-  align-items: stretch;
-  justify-content: center;
+  @media #{$mq-tablet} {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
 
-  &🍬cover {
-    flex-basis: $sidebar-width;
-    max-width: $sidebar-max-width;
-    margin-right: $base-spacing * 2;
+    max-width: $max-width-wide;
+    padding-bottom: 15em;
+
+    &🍬cover {
+      flex-shrink: 0;
+      width: $sidebar-width;
+      max-width: $sidebar-max-width;
+      margin-right: $base-spacing * 2;
+      text-align: center;
+    }
+
+    &🍬spells {
+      flex-grow: 1;
+    }
   }
 
-  &🍬spells {
-    flex-grow: 1;
+  @media #{$mq-desktop} {
+    max-width: $max-width-thin;
   }
 }

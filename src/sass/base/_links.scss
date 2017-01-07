@@ -1,0 +1,11 @@
+a {
+  color: $colour-white;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: baseline;
+  border-bottom: $base-border-size dotted currentColor;
+
+  &:hover {
+    border-bottom-style: solid;
+  }
+}
