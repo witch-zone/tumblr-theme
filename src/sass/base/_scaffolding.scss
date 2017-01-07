@@ -6,9 +6,24 @@ section {
   padding: $base-section-padding 0;
 }
 
-.wrapper {
+.✨codex {
   width: 94%;
   margin: 0 auto;
-  padding: 0 $base-spacing;
+  padding: $base-section-padding $base-spacing;
   max-width: $max-width;
+
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+
+  &🍬cover {
+    flex-basis: $sidebar-width;
+    max-width: $sidebar-max-width;
+    margin-right: $base-spacing * 2;
+  }
+
+  &🍬spells {
+    flex-grow: 1;
+  }
 }

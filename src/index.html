@@ -31,253 +31,254 @@
 </head>
 
 <body data-urlencoded-name="{URLEncodedName}" class="{block:IndexPage} index{/block:IndexPage}{block:PermalinkPage} permalink{/block:PermalinkPage}{block:SearchPage} search{block:NoSearchResults} no-results{/block:NoSearchResults}{/block:SearchPage}">
+  <div class="✨codex">
+    <header class="✨codex🍬cover">
+      <a href="/">
+        <figure class="✨logo">
+          <img src="assets/images/logo.png" alt="{URLEncodedName}" />
+          <figcaption>{Title}</figcaption>
+        </figure>
 
-  <header>
-    <a href="/">
-      <img src="{PortraitURL-128}" alt="{URLEncodedName}" />
+        {block:Description}
+          <h2 class="description">{Description}</h2>
+        {/block:Description}
+      </a>
 
-      <h1 class="title">
-        {Title}
-      </h1>
+      <nav>
+        {block:HasPages}
+          {block:Pages}
+            <a href="{URL}">{Label}</a>
+          {/block:Pages}
+        {/block:HasPages}
 
-      {block:Description}
-        <h2 class="description">{Description}</h2>
-      {/block:Description}
-    </a>
+        {block:AskEnabled}
+          <a href="/ask">{AskLabel}</a>
+        {/block:AskEnabled}
 
-    <nav>
-      {block:HasPages}
-        {block:Pages}
-          <a href="{URL}">{Label}</a>
-        {/block:Pages}
-      {/block:HasPages}
+        {block:SubmissionsEnabled}
+          <a href="/submit">{SubmitLabel}</a>
+        {/block:SubmissionsEnabled}
 
-      {block:AskEnabled}
-        <a href="/ask">{AskLabel}</a>
-      {/block:AskEnabled}
+        {block:IfShowArchiveNavigationLink}
+          <a href="/archive">Archive</a>
+        {/block:IfShowArchiveNavigationLink}
 
-      {block:SubmissionsEnabled}
-        <a href="/submit">{SubmitLabel}</a>
-      {/block:SubmissionsEnabled}
+        {block:IfShowSearch}
+          <div class="search">
+            <form action="/search" method="get"><input type="search" name="q" placeholder="Search..." name="s"></form>
+          </div>
+        {/block:IfShowSearch}
+      </nav>
+    </header>
 
-      {block:IfShowArchiveNavigationLink}
-        <a href="/archive">Archive</a>
-      {/block:IfShowArchiveNavigationLink}
+    <main class="✨codex🍬spells" data-page-id="{CurrentPage}">
+      {block:TagPage}
+        <header>
+          <h2>Things tagged "{Tag}"&hellip;</h2>
+        </header>
+      {/block:TagPage}
 
-      {block:IfShowSearch}
-        <div class="search">
-          <form action="/search" method="get"><input type="search" name="q" placeholder="Search..." name="s"></form>
-        </div>
-      {/block:IfShowSearch}
-    </nav>
-  </header>
+      {block:SearchPage}
+        <header>
+          <h2>Looking for "{SearchQuery}"&hellip;</h2>
+        </header>
+      {/block:SearchPage}
 
-  <main data-page-id="{CurrentPage}">
-    {block:TagPage}
-      <header>
-        <h2>Things tagged "{Tag}"&hellip;</h2>
-      </header>
-    {/block:TagPage}
+      {block:NoSearchResults}
+        <section>
+          <p>
+            We've not got any things matching "{SearchQuery}".
+          </p>
+        </section>
+      {/block:NoSearchResults}
 
-    {block:SearchPage}
-      <header>
-        <h2>Looking for "{SearchQuery}"&hellip;</h2>
-      </header>
-    {/block:SearchPage}
+      {block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}
+        <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Date}post {/block:Date}{block:PermalinkPage}page {/block:PermalinkPage} {TagsAsClasses}">
+          {block:Quote}
+            <header>
+              <blockquote>
+                "{Quote}"
+              </blockquote>
+            </header>
 
-    {block:NoSearchResults}
-      <section>
-        <p>
-          We've not got any things matching "{SearchQuery}".
-        </p>
-      </section>
-    {/block:NoSearchResults}
+            {block:Source}
+              <p>{Source}</p>
+            {/block:Source}
+          {/block:Quote}
 
-    {block:Posts inlineMediaWidth="700" inlineNestedMediaWidth="700"}
-      <article class="{block:Text}text {/block:Text}{block:Photoset}photoset {/block:Photoset}{block:Photo}photo {/block:Photo}{block:Quote}quote {/block:Quote}{block:Link}link {/block:Link}{block:Chat}chat {/block:Chat}{block:Audio}audio {/block:Audio}{block:Video}video {/block:Video}{block:Answer}answer {/block:Answer}{block:RebloggedFrom}reblogged {/block:RebloggedFrom}{block:Date}post {/block:Date}{block:PermalinkPage}page {/block:PermalinkPage} {TagsAsClasses}">
-        {block:Quote}
-          <header>
-            <blockquote>
-              "{Quote}"
-            </blockquote>
-          </header>
+          {block:Photoset}
+            <figure>
+              {Photoset}
 
-          {block:Source}
-            <p>{Source}</p>
-          {/block:Source}
-        {/block:Quote}
+              {block:Caption}
+                <figcaption>
+                  {Caption}
+                </figcaption>
+              {/block:Caption}
+            </figure>
+          {/block:Photoset}
 
-        {block:Photoset}
-          <figure>
-            {Photoset}
-
-            {block:Caption}
-              <figcaption>
-                {Caption}
-              </figcaption>
-            {/block:Caption}
-          </figure>
-        {/block:Photoset}
-
-        {block:Photo}
-          <figure>
-            <div class="media-wrapper">
-              <div class="media photo">
-                {LinkOpenTag}
-                  <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
-                {LinkCloseTag}
+          {block:Photo}
+            <figure>
+              <div class="media-wrapper">
+                <div class="media photo">
+                  {LinkOpenTag}
+                    <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" width="{PhotoWidth-HighRes}" height="{PhotoHeight-HighRes}">
+                  {LinkCloseTag}
+                </div>
               </div>
-            </div>
 
-            {block:Caption}
-              <figcaption>
-                {Caption}
-              </figcaption>
-            {/block:Caption}
-          </figure>
-        {/block:Photo}
+              {block:Caption}
+                <figcaption>
+                  {Caption}
+                </figcaption>
+              {/block:Caption}
+            </figure>
+          {/block:Photo}
 
-        {block:Video}
-          <figure>
-            <div class="media-wrapper">
-              <div class="media video">
-                {Video-700}
+          {block:Video}
+            <figure>
+              <div class="media-wrapper">
+                <div class="media video">
+                  {Video-700}
+                </div>
               </div>
-            </div>
 
-            {block:Caption}
-              <figcaption>
-                {Caption}
-              </figcaption>
-            {/block:Caption}
-          </figure>
-        {/block:Video}
+              {block:Caption}
+                <figcaption>
+                  {Caption}
+                </figcaption>
+              {/block:Caption}
+            </figure>
+          {/block:Video}
 
-        {block:Link}
-          <header>
-            <h2>
-              <a href="{URL}" {Target}>{Name}</a>
-            </h2>
-          </header>
-
-          {block:Description}
-            <p>{Description}</p>
-          {/block:Description}
-        {/block:Link}
-
-        {block:Chat}
-          <ul>
-            {block:Lines}
-              <li class="member{UserNumber}">
-                {block:Label}<span class="label">{Label}</span>{/block:Label}
-                {Line}
-              </li>
-            {/block:Lines}
-          </ul>
-        {/block:Chat}
-
-        {block:Answer}
-          <header>
-            <a href="{Permalink}">
-              {Question}
-
-              <span class="asker">
-                <img src="{AskerPortraitURL-24}" />{Asker}
-              </span>
-            </a>
-          </header>
-
-          {Answer}
-        {/block:Answer}
-
-        {block:Text}
-          {block:Title}
+          {block:Link}
             <header>
               <h2>
-                <a href="{Permalink}">{Title}</a>
+                <a href="{URL}" {Target}>{Name}</a>
               </h2>
             </header>
-          {/block:Title}
 
-          {Body}
-        {/block:Text}
+            {block:Description}
+              <p>{Description}</p>
+            {/block:Description}
+          {/block:Link}
 
-        {block:Audio}
-          <div class="media-wrapper">
-            <div class="media audio">
-              {block:AudioEmbed}
-                {AudioEmbed color="white"}
-              {/block:AudioEmbed}
+          {block:Chat}
+            <ul>
+              {block:Lines}
+                <li class="member{UserNumber}">
+                  {block:Label}<span class="label">{Label}</span>{/block:Label}
+                  {Line}
+                </li>
+              {/block:Lines}
+            </ul>
+          {/block:Chat}
+
+          {block:Answer}
+            <header>
+              <a href="{Permalink}">
+                {Question}
+
+                <span class="asker">
+                  <img src="{AskerPortraitURL-24}" />{Asker}
+                </span>
+              </a>
+            </header>
+
+            {Answer}
+          {/block:Answer}
+
+          {block:Text}
+            {block:Title}
+              <header>
+                <h2>
+                  <a href="{Permalink}">{Title}</a>
+                </h2>
+              </header>
+            {/block:Title}
+
+            {Body}
+          {/block:Text}
+
+          {block:Audio}
+            <div class="media-wrapper">
+              <div class="media audio">
+                {block:AudioEmbed}
+                  {AudioEmbed color="white"}
+                {/block:AudioEmbed}
+              </div>
             </div>
-          </div>
 
-          {block:Caption}
-            <p>
-              {Caption}
-            </p>
-          {/block:Caption}
-        {/block:Audio}
+            {block:Caption}
+              <p>
+                {Caption}
+              </p>
+            {/block:Caption}
+          {/block:Audio}
 
-        <footer class="postmeta">
-          {block:RebloggedFrom}
-            <a href="{ReblogParentURL}">
-              reblogged from {ReblogParentName}
-            </a>
-          {/block:RebloggedFrom}
+          <footer class="postmeta">
+            {block:RebloggedFrom}
+              <a href="{ReblogParentURL}">
+                reblogged from {ReblogParentName}
+              </a>
+            {/block:RebloggedFrom}
 
-          {block:ContentSource}
-            <a href="{SourceURL}">
-              {lang:Source}: {SourceTitle}
-            </a>
-          {/block:ContentSource}
+            {block:ContentSource}
+              <a href="{SourceURL}">
+                {lang:Source}: {SourceTitle}
+              </a>
+            {/block:ContentSource}
 
-          {block:HasTags}
-            {block:Tags}
-               <a href="{TagURL}">{Tag}</a>
-            {/block:Tags}
-          {/block:HasTags}
+            {block:HasTags}
+              {block:Tags}
+                 <a href="{TagURL}">{Tag}</a>
+              {/block:Tags}
+            {/block:HasTags}
 
-          {block:Date}
-            <a href="{Permalink}">{TimeAgo}</a>
-          {/block:Date}
+            {block:Date}
+              <a href="{Permalink}">{TimeAgo}</a>
+            {/block:Date}
 
-          <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
-        </footer>
-      </article>
+            <a href="{Permalink}#notes">{NoteCountWithLabel}</a>
+          </footer>
+        </article>
 
-      {block:PostNotes}
-        <section>
-          {PostNotes}
-        </section>
-      {/block:PostNotes}
+        {block:PostNotes}
+          <section>
+            {PostNotes}
+          </section>
+        {/block:PostNotes}
 
-    {/block:Posts}
-  </main>
+      {/block:Posts}
 
-  {block:Pagination}
-    <footer>
-      <nav>
-      {block:PreviousPage}
-        <a href="{PreviousPage}">&larr;</a>
-      {/block:PreviousPage}
+      {block:Pagination}
+        <nav>
+        {block:PreviousPage}
+          <a href="{PreviousPage}">&larr;</a>
+        {/block:PreviousPage}
 
-      {block:JumpPagination length="5"}
-        {block:CurrentPage}
-          <a href="#">{CurrentPage}</a>
-        {/block:CurrentPage}
+        {block:JumpPagination length="5"}
+          {block:CurrentPage}
+            <a href="#">{CurrentPage}</a>
+          {/block:CurrentPage}
 
-        {block:JumpPage}
-           <a href="{URL}">{PageNumber}</a>
-        {/block:JumpPage}
-      {/block:JumpPagination}
+          {block:JumpPage}
+             <a href="{URL}">{PageNumber}</a>
+          {/block:JumpPage}
+        {/block:JumpPagination}
 
-      {block:NextPage}
-        <a href="{NextPage}">&rarr;</a>
-      {/block:NextPage}
-      </nav>
-    </footer>
-  {/block:Pagination}
+        {block:NextPage}
+          <a href="{NextPage}">&rarr;</a>
+        {/block:NextPage}
+        </nav>
+      {/block:Pagination}
+    </main>
+  </div>
 
+  <footer class="✨witches">
+    the witch zone is cute
+  </footer>
 </body>
 
 </html>

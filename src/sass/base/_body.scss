@@ -1,4 +1,9 @@
 body {
-  background: $colour-primary;
   color: $colour-white;
+  background-color: $colour-primary;
+  background-image: url('../assets/images/danibomb.png'), url('../assets/images/bombYEN.png');
+  background-position: bottom left, bottom right;
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }

@@ -3,6 +3,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import autoprefixer from 'autoprefixer'
 
+const env = process.env.NODE_ENV
+
 export default {
   entry: {
     wz: './src/',
@@ -10,13 +12,16 @@ export default {
   output: {
     path: './dist/',
     filename: '[name].[hash].js',
-    publicPath: '/',
+    publicPath: (env === 'development') ? '/' : 'http://spells.witch.zone/tumblr/',
   },
   module: {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
       loader: 'babel',
+    }, {
+      test: /\.html?$/,
+      loader: 'html-loader?minimize=true',
     }, {
       test: /\.woff2?$/,
       loader: 'url-loader?limit=65000',
