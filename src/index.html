@@ -31,47 +31,47 @@
 </head>
 
 <body data-urlencoded-name="{URLEncodedName}" class="{block:IndexPage} index{/block:IndexPage}{block:PermalinkPage} permalink{/block:PermalinkPage}{block:SearchPage} search{block:NoSearchResults} no-results{/block:NoSearchResults}{/block:SearchPage}">
-  <div class="✨codex">
-    <header class="✨codex🍬cover ✨cover">
-      <figure class="✨cover🍬logo">
-        <a href="/">
-          <img src="assets/images/logo.png" alt="{URLEncodedName}" />
-        </a>
-        <figcaption>{Title}</figcaption>
-      </figure>
+  <header class="✨spellbook ✨cover">
+    <figure class="✨cover🍬logo">
+      <a href="/">
+        <img src="assets/images/logo.png" alt="{URLEncodedName}" />
+      </a>
+      <figcaption>{Title}</figcaption>
+    </figure>
 
-      <h2 class="✨cover🍬description">
-        {Description}
-      </h2>
+    {block:Description}
+      {Description}
+    {/block:Description}
 
-      <nav>
-        {block:HasPages}
-          {block:Pages}
-            <a href="{URL}">{Label}</a>
-          {/block:Pages}
-        {/block:HasPages}
+    <nav>
+      {block:HasPages}
+        {block:Pages}
+          <a href="{URL}">{Label}</a>
+        {/block:Pages}
+      {/block:HasPages}
 
-        {block:AskEnabled}
-          <a href="/ask">{AskLabel}</a>
-        {/block:AskEnabled}
+      {block:AskEnabled}
+        <a href="/ask">{AskLabel}</a>
+      {/block:AskEnabled}
 
-        {block:SubmissionsEnabled}
-          <a href="/submit">{SubmitLabel}</a>
-        {/block:SubmissionsEnabled}
+      {block:SubmissionsEnabled}
+        <a href="/submit">{SubmitLabel}</a>
+      {/block:SubmissionsEnabled}
 
-        {block:IfShowArchiveNavigationLink}
-          <a href="/archive">Archive</a>
-        {/block:IfShowArchiveNavigationLink}
+      {block:IfShowArchiveNavigationLink}
+        <a href="/archive">Archive</a>
+      {/block:IfShowArchiveNavigationLink}
 
-        {block:IfShowSearch}
-          <div class="search">
-            <form action="/search" method="get"><input type="search" name="q" placeholder="Search..." name="s"></form>
-          </div>
-        {/block:IfShowSearch}
-      </nav>
-    </header>
+      {block:IfShowSearch}
+        <div class="search">
+          <form action="/search" method="get"><input type="search" name="q" placeholder="Search..." name="s"></form>
+        </div>
+      {/block:IfShowSearch}
+    </nav>
+  </header>
 
-    <main class="✨codex🍬spells" data-page-id="{CurrentPage}">
+  <main class="✨spellbook" data-page-id="{CurrentPage}">
+    <div class="✨spell">
       {block:TagPage}
         <header>
           <h2>Things tagged "{Tag}"&hellip;</h2>
@@ -273,11 +273,13 @@
         {/block:NextPage}
         </nav>
       {/block:Pagination}
-    </main>
-  </div>
+    </div>
+  </main>
 
-  <footer class="✨witches">
-    the witch zone is cute
+  <footer class="✨spellbook ✨witches">
+    <div class="✨spell">
+      the witch zone is Yen Quach, dani quinn sexton, and sometimes their friends. they make lovely things for everyone. we're cute and we'll mess you up
+    </div>
   </footer>
 </body>
 

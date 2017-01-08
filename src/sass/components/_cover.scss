@@ -1,12 +1,19 @@
 .✨cover {
+  text-align: center;
+  background-image: url('../assets/images/danibomb.png'), url('../assets/images/bombYEN.png');
+  background-position: bottom left, bottom right;
+  background-size: 25%;
+  background-repeat: no-repeat;
+
   &🍬logo {
     margin: 0 auto $base-spacing;
-    max-width: $sidebar-max-width;
+    min-width: $logo-min-width;
+    width: $logo-width;
 
     a {
       border: none;
     }
-    
+
     figcaption {
       display: none;
     }

@@ -1,39 +1,38 @@
 main {
   position: relative;
+  background: $colour-white;
+  color: $colour-black;
+
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: $base-section-padding/2;
+    background: url("../assets/images/pointy.svg");
+    background-repeat: repeat-x;
+    background-position: left bottom;
+    background-size: contain;
+  }
+
+  &:before {
+    top: -$base-section-padding/2;
+    transform: translateY(2px);
+  }
+
+  &:after {
+    bottom: -$base-section-padding/2;
+    transform: rotate(180deg) translateY(2px);
+  }
 }
 
-section {
+.✨spellbook {
   padding: $base-section-padding 0;
 }
 
-.✨codex {
+.✨spell {
   width: 94%;
+  max-width: $max-width;
   margin: 0 auto;
-  padding: $base-section-padding $base-spacing;
-
-  @media #{$mq-tablet} {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    justify-content: center;
-
-    max-width: $max-width-wide;
-    padding-bottom: 15em;
-
-    &🍬cover {
-      flex-shrink: 0;
-      width: $sidebar-width;
-      max-width: $sidebar-max-width;
-      margin-right: $base-spacing * 2;
-      text-align: center;
-    }
-
-    &🍬spells {
-      flex-grow: 1;
-    }
-  }
-
-  @media #{$mq-desktop} {
-    max-width: $max-width-thin;
-  }
 }
