@@ -1,0 +1,15 @@
+@import '~_bat-sprite';
+
+.✨bat-friend {
+  @include sprite($flap-1);
+  background-size: 100% auto;
+  animation: flip-flap 0.75s steps(1) infinite;
+}
+
+@keyframes flip-flap {
+  0%  { background-position: 0 0; }
+  20% { background-position: 0 -25%; }
+  40% { background-position: 0 -50%; }
+  60% { background-position: 0 -75%; }
+  80% { background-position: 0 -100%; }
+}

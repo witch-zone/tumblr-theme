@@ -1,6 +1,7 @@
 import webpack from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
+import SpritesmithPlugin from 'webpack-spritesmith'
 import autoprefixer from 'autoprefixer'
 
 const env = process.env.NODE_ENV
@@ -41,7 +42,7 @@ export default {
     autoprefixer({ browsers: ['last 2 versions', 'ie 9-11'] }),
   ],
   resolve: {
-    modulesDirectories: ['src', 'node_modules'],
+    modulesDirectories: ['src', 'node_modules', 'build/spritesmith-generated'],
     extensions: ['', '.js', '.jsx', '.scss'],
   },
   plugins: [
@@ -49,11 +50,32 @@ export default {
     new HtmlWebpackPlugin({ template: './src/index.html' }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.NoErrorsPlugin(),
+    new SpritesmithPlugin({
+      src: {
+        cwd: './src/assets/sprites/bat/',
+        glob: '*.png',
+      },
+      target: {
+        image: './build/spritesmith-generated/bat.png',
+        css: [
+          [
+            './build/spritesmith-generated/_bat-sprite.scss',
+            { format: 'scss' },
+          ],
+        ],
+      },
+      apiOptions: {
+        cssImageRef: '~bat.png',
+      },
+      spritesmithOptions: {
+        algorithm: 'top-down',
+      },
+    }),
   ],
   devServer: {
     historyApiFallback: true,
     inline: true,
     stats: 'errors-only',
   },
-  devtool: 'source-map',
+  devtool: (env === 'development') ? 'source-map' : '',
 }

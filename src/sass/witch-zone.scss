@@ -1,15 +1,18 @@
-@import "~normalize.css";
+@import '~normalize.css';
 
-@import "settings/scaffolding";
-@import "settings/typography";
-@import "settings/cover";
-@import "settings/witching-palette";
+@import 'settings/scaffolding';
+@import 'settings/typography';
+@import 'settings/cover';
+@import 'settings/witching-palette';
 
-@import "base/body";
-@import "base/fonts";
-@import "base/typography";
-@import "base/scaffolding";
-@import "base/links";
+@import 'base/body';
+@import 'base/fonts';
+@import 'base/typography';
+@import 'base/scaffolding';
+@import 'base/links';
 
-@import "components/cover";
-@import "components/witches";
+/* 🎵 HERE THEY COME 🎵 */
+@import 'components/bat-friend';
+
+@import 'components/cover';
+@import 'components/witches';

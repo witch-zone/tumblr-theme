@@ -9,6 +9,8 @@
     margin: 0 auto $base-spacing;
     min-width: $logo-min-width;
     width: $logo-width;
+    position: relative;
+    z-index: 1;
 
     a {
       border: none;
@@ -17,5 +19,15 @@
     figcaption {
       display: none;
     }
+  }
+
+  .✨bat-friend {
+    position: absolute;
+    top: 15%;
+    right: 80%;
+    width: 75%;
+    height: 0;
+    padding-bottom: 60%;
+    z-index: -1;
   }
 }
