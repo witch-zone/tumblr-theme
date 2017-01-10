@@ -1,4 +1,5 @@
 import webpack from 'webpack'
+import CleanWebpackPlugin from 'clean-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import ExtractTextPlugin from 'extract-text-webpack-plugin'
 import SpritesmithPlugin from 'webpack-spritesmith'
@@ -46,6 +47,7 @@ export default {
     extensions: ['', '.js', '.jsx', '.scss'],
   },
   plugins: [
+    new CleanWebpackPlugin(['dist', 'build']),
     new ExtractTextPlugin('[name].[hash].css'),
     new HtmlWebpackPlugin({ template: './src/index.html' }),
     new webpack.optimize.OccurenceOrderPlugin(),
