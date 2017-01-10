@@ -98,7 +98,7 @@ config.production = {
   ]
 }
 
-config.dev = {
+config.development = {
   ...config.default,
 
   output: {
