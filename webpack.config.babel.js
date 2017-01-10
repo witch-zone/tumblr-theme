@@ -70,7 +70,7 @@ export default {
         cssImageRef: '~bat.png',
       },
       spritesmithOptions: {
-        algorithm: 'top-down',
+        algorithm: 'left-right',
       },
     }),
   ],

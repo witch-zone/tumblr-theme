@@ -23,11 +23,12 @@
 
   .✨bat-friend {
     position: absolute;
-    top: 15%;
-    right: 80%;
-    width: 75%;
+    top: 100%;
+    left: 50%;
+    width: 55%;
     height: 0;
-    padding-bottom: 60%;
-    z-index: -1;
+    padding-bottom: 45%;
+    z-index: 2;
+    transform: translateX(-50%);
   }
 }
