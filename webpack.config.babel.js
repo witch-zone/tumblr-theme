@@ -29,14 +29,14 @@ config.default = {
       loader: 'html-loader?minimize=true&removeAttributeQuotes=false',
     }, {
       test: /\.woff2?$/,
-      loader: 'url-loader?limit=65000',
+      loader: 'file?name=assets/fonts/[name].[ext]',
     }, {
       test: /\.s?css$/,
       loader: ExtractTextPlugin.extract(['css', 'postcss', 'sass']),
     }, {
       test: /\.(jpe?g|png|gif|svg)$/i,
-      loader: 'file?name=images/[name].[ext]!img?minimize',
-    },
+      loader: 'file?name=assets/images/[name].[ext]!img?minimize',
+    }]
   },
 
   postcss: [
