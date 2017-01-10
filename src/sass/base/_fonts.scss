@@ -1,31 +1,27 @@
 @font-face {
   font-family: 'Noyh R';
-  src: url('../assets/fonts/noyhr-black.woff2') format('woff2'),
-       url('../assets/fonts/noyhr-black.woff') format('woff');
+  src: url('../assets/fonts/noyhr-black.woff') format('woff');
   font-weight: $font-weight-ultra;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Noyh R';
-  src: url('../assets/fonts/noyhr-bold.woff2') format('woff2'),
-       url('../assets/fonts/noyhr-bold.woff') format('woff');
+  src: url('../assets/fonts/noyhr-bold.woff') format('woff');
   font-weight: $font-weight-heavy;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Noyh R';
-  src: url('../assets/fonts/noyhr-light.woff2') format('woff2'),
-       url('../assets/fonts/noyhr-light.woff') format('woff');
+  src: url('../assets/fonts/noyhr-light.woff') format('woff');
   font-weight: $font-weight-light;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Noyh R';
-  src: url('../assets/fonts/noyhr-medium.woff2') format('woff2'),
-       url('../assets/fonts/noyhr-medium.woff') format('woff');
+  src: url('../assets/fonts/noyhr-medium.woff') format('woff');
   font-weight: $font-weight-regular;
   font-style: normal;
 }

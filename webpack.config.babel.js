@@ -29,7 +29,7 @@ config.default = {
       loader: 'html-loader?minimize=true&removeAttributeQuotes=false',
     }, {
       test: /\.woff2?$/,
-      loader: 'file?name=assets/fonts/[name].[ext]',
+      loader: 'url',
     }, {
       test: /\.s?css$/,
       loader: ExtractTextPlugin.extract(['css', 'postcss', 'sass']),
