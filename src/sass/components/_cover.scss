@@ -1,5 +1,6 @@
 .✨cover {
   text-align: center;
+  background-color: $colour-primary;
   background-image: url('../assets/images/danibomb.png'), url('../assets/images/bombYEN.png');
   background-position: bottom left, bottom right;
   background-size: 25%;
@@ -13,7 +14,7 @@
     z-index: 1;
 
     a {
-      border: none;
+      background: none;
     }
 
     figcaption {

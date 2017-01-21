@@ -26,9 +26,10 @@ h1, h2, h3, h4, h5, h6 {
   line-height: $header-line-height;
   letter-spacing: $header-letter-spacing;
   margin-top: 0;
-  margin-bottom: $base-spacing;
+  margin-bottom: $header-spacing;
   font-weight: $font-weight-heavy;
   font-family: $header-font-family;
+  text-transform: lowercase;
 
   &:last-child {
     margin-bottom: 0;
@@ -53,11 +54,11 @@ h4 {
   font-size: $font-size-h4;
 }
 
-h2 {
+h5 {
   font-size: $font-size-h5;
 }
 
-h2 {
+h6 {
   font-size: $font-size-h6;
 }
 
