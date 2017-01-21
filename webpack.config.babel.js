@@ -7,6 +7,28 @@ import autoprefixer from 'autoprefixer'
 
 const env = process.env.NODE_ENV
 
+const makeSprite = sprite => new SpritesmithPlugin({
+  src: {
+    cwd: `./src/assets/sprites/${sprite}/`,
+    glob: '*.png',
+  },
+  target: {
+    image: `./build/spritesmith-generated/${sprite}.png`,
+    css: [
+      [
+        `./build/spritesmith-generated/_${sprite}-sprite.scss`,
+        { format: 'scss' },
+      ],
+    ],
+  },
+  apiOptions: {
+    cssImageRef: `~${sprite}.png`,
+  },
+  spritesmithOptions: {
+    algorithm: 'left-right',
+  },
+})
+
 const config = {}
 
 config.default = {
@@ -60,27 +82,7 @@ config.default = {
     new webpack.optimize.OccurenceOrderPlugin(),
     new ExtractTextPlugin('[name].[hash].css'),
     new HtmlWebpackPlugin({ template: './src/index.html' }),
-    new SpritesmithPlugin({
-      src: {
-        cwd: './src/assets/sprites/bat/',
-        glob: '*.png',
-      },
-      target: {
-        image: './build/spritesmith-generated/bat.png',
-        css: [
-          [
-            './build/spritesmith-generated/_bat-sprite.scss',
-            { format: 'scss' },
-          ],
-        ],
-      },
-      apiOptions: {
-        cssImageRef: '~bat.png',
-      },
-      spritesmithOptions: {
-        algorithm: 'left-right',
-      },
-    }),
+    makeSprite('bat'),
   ],
 }
 
