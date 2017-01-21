@@ -1,3 +1,16 @@
 .✨witches {
   text-align: center;
+
+  .✨spell {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .✨bat-friend {
+    flex-shrink: 0;
+    flex-grow: 0;
+    margin-right: $base-spacing;
+  }
 }
