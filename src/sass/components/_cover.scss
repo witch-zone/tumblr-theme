@@ -1,10 +1,26 @@
 .✨cover {
   text-align: center;
+
   background-color: $colour-primary;
-  background-image: url('../assets/images/danibomb.png'), url('../assets/images/bombYEN.png');
-  background-position: bottom left, bottom right;
-  background-size: 25%;
   background-repeat: no-repeat;
+
+  background-image:
+    url('../assets/images/danibomb.png'), url('../assets/images/bombYEN.png'),
+    repeating-radial-gradient(
+      ellipse farthest-corner at center top,
+      $colour-primary-light,
+      $colour-primary
+    );
+
+  background-position:
+    bottom left,
+    bottom right,
+    top left;
+
+  background-size:
+    25%,
+    25%,
+    100%;
 
   &🍬logo {
     margin: 0 auto $base-spacing;
