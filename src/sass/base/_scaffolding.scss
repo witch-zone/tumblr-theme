@@ -24,6 +24,7 @@ main {
   &:after {
     bottom: -$base-section-padding/2;
     transform: rotate(180deg) translateY(2px);
+    filter: drop-shadow(0 (-$base-section-padding/4) 0 transparentize($colour-black, 0.7))
   }
 }
 

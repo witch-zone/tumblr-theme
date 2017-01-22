@@ -1,9 +1,3 @@
-@import '~_bat-sprite';
-
-$bat-aspect: ($flap-1-width/$flap-1-height);
-$bat-width: 13em;
-$bat-height: $bat-width/$bat-aspect;
-
 .✨bat-friend {
   @include sprite($flap-1);
   display: block;

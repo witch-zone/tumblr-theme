@@ -1,0 +1,17 @@
+.✨wallpaper {
+  background-color: $colour-primary-dark;
+  background-image: linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 45%,
+    transparentize($colour-black, 0.8) 100%
+  ), repeating-linear-gradient(
+    to right,
+    transparent 0,
+    transparent $wallpaper-stripe-size * 0.5,
+    $wallpaper-stripe-colour $wallpaper-stripe-size * 0.5,
+    $wallpaper-stripe-colour $wallpaper-stripe-size * 1.5,
+    transparent $wallpaper-stripe-size * 1.5,
+    transparent $wallpaper-stripe-size * 2
+  );
+}
